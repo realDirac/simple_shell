@@ -11,6 +11,8 @@
 #include <signal.h>
 
 /* Constants */
+#define BUFFER_SIZE 1024
+#define DELIMITERS " \t\r\n\a"
 #define MAX_LINE_LENGTH 1024
 #define MAX_ARGS 64
 #define MAX_PATH_LENGTH 1024
@@ -18,6 +20,9 @@
 #define MAX_ALIAS_VALUE_LEGTH 256
 
 /* Function Prototypes */
+char *read_line(void);
+char **split_line(char *line);
+int execute(char **args);
 void display_prompt();
 char *custom_getline();
 char **split_arguments(char *line);
